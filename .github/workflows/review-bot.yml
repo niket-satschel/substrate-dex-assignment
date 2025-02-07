@@ -1,0 +1,28 @@
+name: Review Bot
+on:
+  workflow_run:
+    workflows:
+      - Review-Trigger
+    types:
+      - completed
+
+jobs:
+  review-approvals:
+    runs-on: ubuntu-latest
+    environment: master
+    steps:
+      - name: Generate token
+        id: app_token
+        uses: actions/create-github-app-token@v1.9.3
+        with:
+          app-id: ${{ secrets.REVIEW_APP_ID }}
+          private-key: ${{ secrets.REVIEW_APP_KEY }}
+      - name: "Evaluates PR reviews and assigns reviewers"
+        uses: paritytech/review-bot@v2.4.0
+        with:
+          repo-token: ${{ steps.app_token.outputs.token }}
+          team-token: ${{ steps.app_token.outputs.token }}
+          checks-token: ${{ steps.app_token.outputs.token }}
+          # This is extracted from the triggering event
+          pr-number: ${{ github.event.workflow_run.pull_requests[0].number }}
+          request-reviewers: true
