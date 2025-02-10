@@ -160,7 +160,7 @@ sp-externalities = {  git = "https://github.com/paritytech/polkadot-sdk.git", br
 sp-keyring = {  git = "https://github.com/paritytech/polkadot-sdk.git", branch = "release-polkadot-v1.11.0", default-features = false }
 sp-runtime = {  git = "https://github.com/paritytech/polkadot-sdk.git", branch = "release-polkadot-v1.11.0", default-features = false }
 serde_json = { workspace = true, default-features = true }
-scale-info = { version = "2.11.1", features = ["derive", "serde"] }
+scale-info = { version = "2.11.6", features = ["derive", "serde"] }
 sp-trie = {  git = "https://github.com/paritytech/polkadot-sdk.git", branch = "release-polkadot-v1.11.0", default-features = false }
 sp-state-machine ={  git = "https://github.com/paritytech/polkadot-sdk.git", branch = "release-polkadot-v1.11.0", default-features = false }
 
