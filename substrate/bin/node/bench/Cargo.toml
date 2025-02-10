@@ -44,4 +44,4 @@ lazy_static = "1.4.0"
 parity-db = "0.4.12"
 sc-transaction-pool = {  git = "https://github.com/paritytech/polkadot-sdk.git", branch = "release-polkadot-v1.11.0", default-features = false }
 sc-transaction-pool-api = {  git = "https://github.com/paritytech/polkadot-sdk.git", branch = "release-polkadot-v1.11.0", default-features = false }
-futures = { version = "0.3.30", features = ["thread-pool"] }
+futures = { version = "0.3.31", features = ["thread-pool"] }
